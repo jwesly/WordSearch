@@ -20,7 +20,7 @@ bool check(string answer)
 	return 0;
 }
 void solve()
-{
+{ 
 	while(1)
 	{
 		//display();
