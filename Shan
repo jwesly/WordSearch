@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool check(string answer)
+{
+	char column1, column2, row1, row2;
+	column1 = answer[0];
+	column2 = answer[3];
+	row1 = answer[1];
+	row2 = answer[4];
+	for(int i = 0; i < words.size(); i++)
+	{
+		if (column1 == words[i]->start.col & column2 == words[i]->start.col & row1 == words[i]->start.row & row2 == words[i]->start.row)
+			return true;
+	}
+	return false;
+	cout << column1 << ' ' << row1;
+	cout << '\n' << column2 << row2 << endl;
+	return 0;
+}
+void solve()
+{ 
+	while(1)
+	{
+		//display();
+		string answer;
+		cout << "Enter the range (ex. A1:A9 for horizontal) you believe is an answer: " << endl;
+		getline(cin, answer);
+		check(answer);
+	}
+}
