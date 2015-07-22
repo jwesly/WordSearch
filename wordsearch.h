@@ -1,10 +1,15 @@
+#define FILE_Z "dictionary.txt"		//defines dictionary file -- FILE causes compilation errors mingw G++
+
+#ifndef HEADER_A
+
 #include <vector>
 #include <string>
-#define FILE "../WordSearch/dictionary.txt"		//defines dictionary file
+
 #define ALPHABET 26								//defines number of chars in alphabet
 #define PUZZLE_SIZE 10							//defines size of puzzle (all are square)
 #define BOUND_LOWER 0							//defines lowest  possible index of location in puzzle
 #define BOUND_UPPER PUZZLE_SIZE - 1				//defines highest possible index of location in puzzle
+#define MIN_WORD_LENGTH 5
 
 struct trie{
 	bool is_word;
@@ -55,3 +60,5 @@ public:
 	void clear();		//clear the puzzle
 	int stats();
 };
+
+#endif

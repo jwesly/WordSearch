@@ -1,3 +1,6 @@
+#ifndef WORDSEARCH_F
+#define WORDSEARCH_F
+
 #include "wordsearch.h"
 #include <Windows.h>
 #include <fstream>
@@ -212,11 +215,11 @@ Dictionary::Dictionary(){
 	srand(time(0));
 	root.is_word = false;
 	std::ifstream fin;
-	fin.open(FILE);
+	fin.open(FILE_Z);
 	std::string x;
 	while (fin){
 		fin >> x;
-		if (x.length() > 4)
+		if (x.length() > MIN_WORD_LENGTH)
 			load( x.c_str() , &root);//Load all words in dictionary file into the dictionary
 	}
 	fin.close();
@@ -273,3 +276,5 @@ void Dictionary::unload(trie* node){
 Dictionary::~Dictionary(){
 	unload(&root);
 }
+
+#endif
